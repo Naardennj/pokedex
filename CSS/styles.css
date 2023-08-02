@@ -1,0 +1,168 @@
+/* MAIN */
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&family=Noto+Sans+JP:wght@300;500&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #6ab7f5, #77d67c);
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* MAIN */
+
+/* TITLE */
+.title {
+    display: flex;
+    flex-direction: row;
+    color: #EFEFEF;
+    background: #DC0A2D;
+    border-radius: 5px;
+    width: 60%;
+    border: 5px solid #EFEFEF;
+    border-radius: 15px;
+}
+
+.title h1 {
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+
+}
+
+.title h2 {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-left: -50px;
+    margin-top: 30px;
+    
+}
+
+
+.form {
+    position: absolute;
+    width: 35%;
+    top: 11px;
+    left: 40%;
+}
+
+.form > i {
+    position: absolute;
+    font-size: 25px;
+    top: 13px;
+    left: 10px;
+    color: #DC0A2D;
+    background: #EFEFEF;
+    border-radius: 50%;
+}
+
+.input-search {
+    width: 100%;
+    padding: 2%;
+    outline: none;
+    border: 5px solid #EFEFEF;
+    border-radius: 15px;
+    font-weight: 600;
+    color: #EFEFEF;
+    font-size: 1rem;
+    background: #DC0A2D;
+}
+
+.input-search::placeholder {
+    /* position: absolute;
+    left: 50px; */
+    color: #EFEFEF;
+}
+
+.random {
+    position: absolute;
+    right: 275px;
+    top: 22px;
+    display: flex;
+    border-radius: 50%;
+    border: none;
+    background: #EFEFEF;
+    cursor: pointer;
+}
+
+.random i {
+    color: #DC0A2D;
+    font-size: 30px;
+}
+/* TITLE */
+
+/* CARD */
+.poke-conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.pokemon {
+    background: #DC0A2D;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    border: 5px solid #EFEFEF;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.pokemon:hover {
+    transform: scale(1.1);
+}
+
+.img-conteiner {
+    background: url(/IMG/test.jpg);
+    border: 5px solid #EFEFEF;
+    border-radius: 5px;
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+}
+
+.img-conteiner img {
+    height: 75%;
+    margin-top: 40px;
+}
+
+.info {
+    margin-top: 20px;
+    font-size: 10px;
+    color: #EFEFEF;
+}
+
+.number {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 13px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.type {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 600;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 15px;
+    border-radius: 10px;
+}
+/* CARD */
+
