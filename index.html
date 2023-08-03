@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="icon" href="./IMG/icons8-pokeball-48.png">
+    <link rel="icon" href="./IMG/icon.png">
     <link rel="stylesheet" href="./CSS/styles.css">
     <title>Pokédex</title>
 </head>
@@ -13,13 +13,17 @@
     <div class="main">
         <div class="title">
 
-            <img src="./IMG/pokeboll.png">
-            <h1>Pokédex</h1>
-            <h2>Kanto</h2>
+            <button class="button-home">
+                <a href="index.html">
+                <img src="./IMG/pokeboll.png">
+                <h1>Pokédex</h1>
+                <h2>Kanto</h2>
+                </a>
+            </button>
 
             <form class="form">
                 <input 
-                type="search" 
+                type="text" 
                 class="input-search" 
                 id="searchBar" 
                 placeholder="Search Pokémon Name..."

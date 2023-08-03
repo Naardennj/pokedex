@@ -34,6 +34,20 @@ body {
     border-radius: 15px;
 }
 
+.button-home {
+    display: flex;
+    border: none;
+    background: none;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button-home a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+}
+
 .title h1 {
     display: flex;
     align-items: center;
@@ -53,9 +67,9 @@ body {
 
 .form {
     position: absolute;
-    width: 35%;
+    width: 38%;
     top: 11px;
-    left: 40%;
+    left: 36%;
 }
 
 .form > i {
@@ -128,7 +142,7 @@ body {
 }
 
 .img-conteiner {
-    background: url(/IMG/test.jpg);
+    background: url(/IMG/background.jpg);
     border: 5px solid #EFEFEF;
     border-radius: 5px;
     background-size: cover;
