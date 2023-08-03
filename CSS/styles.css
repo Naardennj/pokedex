@@ -6,12 +6,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+
 }
 
 body {
-    background: linear-gradient(to bottom, #6ab7f5, #77d67c);
-    background-repeat: no-repeat;
-    height: 100%;
+    background: #72caab;
+    height: 100vh; 
 }
 
 .main {
@@ -156,7 +156,7 @@ body {
 }
 
 .type {
-    color: rgb(255, 255, 255);
+    color: #EFEFEF;
     font-size: 15px;
     font-weight: 600;
 

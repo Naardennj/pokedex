@@ -31,6 +31,21 @@ const fetchPokemons = async () => {
     }
 }
 
+const displayRandomPokemon = () => {
+    pokeConteiner.innerHTML = '';
+    const randomPokemon = getRandomPokemon();
+    createPokemonCard(randomPokemon);
+};
+
+const getRandomPokemon = () => {
+    const randomIndex = Math.floor(Math.random() * allPokemonsData.length);
+    const randomPokemon = allPokemonsData[randomIndex];
+    return randomPokemon;
+};
+
+const randomButton = document.getElementById('randomButton');
+randomButton.addEventListener('click', displayRandomPokemon);
+
 const getPokemons = async (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
     const resp = await fetch(url)
@@ -40,31 +55,34 @@ const getPokemons = async (id) => {
 }
 
 const createPokemonCard = (poke) => {
-    const card = document.createElement('div')
-    card.classList.add("pokemon")
+    const card = document.createElement('div');
+    card.classList.add("pokemon");
 
-    const name = poke.name[0].toUpperCase() + poke.name.slice(1)
-    const id = poke.id.toString().padStart(3, '0')
+    const name = poke.name[0].toUpperCase() + poke.name.slice(1);
+    const id = poke.id.toString().padStart(3, '0');
 
-    const pokeTypes = poke.types.map(type => type.type.name)
-    const type = mainTypes.find(type => pokeTypes.indexOf (type) > -1)
-    const color = colors[type]
+    const pokeTypes = poke.types.map(type => type.type.name);
 
-    card.style.backgroundColor = color
+    const typeColors = pokeTypes.map(type => {
+        const color = colors[type];
+        return `<span class="type" style="background-color:${color}">${type}</span>`;
+    });
 
     const pokemonInnerHTML = `
         <div class="img-conteiner">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png">
         </div>
         <div class="info">
-            <spam class="number">Nº ${id}</spam>
+            <span class="number">Nº ${id}</span>
             <h1 class="name">${name}</h1>
-            <small class="type">${type}</small>
+            <div class="types">
+                ${typeColors.join(' ')}
+            </div>
         </div>
-        `
-        
-    card.innerHTML = pokemonInnerHTML
-    pokeConteiner.appendChild(card)
+    `;
+
+    card.innerHTML = pokemonInnerHTML;
+    pokeConteiner.appendChild(card);
 }
 
 const searchPokemon = (query) => {
