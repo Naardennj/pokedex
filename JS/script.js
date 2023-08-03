@@ -20,12 +20,14 @@ const colors = {
     ice: '#58c4e4',
     ghost: '#7b62a3'
 }
-
 const mainTypes = Object.keys(colors)
+
+let allPokemonsData = [];
 
 const fetchPokemons = async () => {
     for (let i = 1; i <= pokemonCount; i++) {
-        await getPokemons(i)
+        const data = await getPokemons(i);
+        allPokemonsData.push(data);
     }
 }
 
@@ -33,7 +35,8 @@ const getPokemons = async (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
     const resp = await fetch(url)
     const data = await resp.json()
-    createPokemonCard(data)
+    createPokemonCard (data);
+    return (data);
 }
 
 const createPokemonCard = (poke) => {
@@ -59,11 +62,27 @@ const createPokemonCard = (poke) => {
             <small class="type">${type}</small>
         </div>
         `
-
+        
     card.innerHTML = pokemonInnerHTML
-
     pokeConteiner.appendChild(card)
 }
+
+const searchPokemon = (query) => {
+    pokeConteiner.innerHTML = '';
+
+    const filteredPokemons = allPokemonsData.filter((pokemon) => {
+        return pokemon.name.includes(query.toLowerCase());
+    });
+
+    filteredPokemons.forEach((pokemon) => {
+        createPokemonCard(pokemon);
+    });
+}
+const searchBar = document.getElementById('searchBar');
+searchBar.addEventListener('input', (event) => {
+    const query = event.target.value.trim().toLowerCase();
+    searchPokemon(query);
+});
 
 
 fetchPokemons()
