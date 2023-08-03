@@ -23,6 +23,7 @@ body {
 /* MAIN */
 
 /* TITLE */
+/* BODY */
 .title {
     display: flex;
     flex-direction: row;
@@ -33,7 +34,9 @@ body {
     border: 5px solid #EFEFEF;
     border-radius: 15px;
 }
+/* BODY */
 
+/* HOME */
 .button-home {
     display: flex;
     border: none;
@@ -63,8 +66,9 @@ body {
     margin-top: 30px;
     
 }
+/* HOME */
 
-
+/* SEARCH */
 .form {
     position: absolute;
     width: 38%;
@@ -99,7 +103,9 @@ body {
     left: 50px; */
     color: #EFEFEF;
 }
+/* SEARCH */
 
+/* RANDOM BUTTOM */
 .random {
     position: absolute;
     right: 275px;
@@ -115,9 +121,11 @@ body {
     color: #DC0A2D;
     font-size: 30px;
 }
+/* RANDOM BUTTOM */
 /* TITLE */
 
 /* CARD */
+/* BODY */
 .poke-conteiner {
     display: flex;
     flex-wrap: wrap;
@@ -126,6 +134,7 @@ body {
     margin: 0 auto;
     max-width: 1200px;
 }
+
 
 .pokemon {
     background: #DC0A2D;
@@ -155,7 +164,9 @@ body {
     height: 75%;
     margin-top: 40px;
 }
+/* BODY */
 
+/* INFO */
 .info {
     margin-top: 20px;
     font-size: 10px;
@@ -178,5 +189,6 @@ body {
     padding: 2px 15px;
     border-radius: 10px;
 }
+/* INFO */
 /* CARD */
 
