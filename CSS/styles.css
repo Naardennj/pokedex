@@ -130,7 +130,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0 auto;
     max-width: 1200px;
 }
@@ -151,7 +151,7 @@ body {
 }
 
 .img-conteiner {
-    background: url(/IMG/background.jpg);
+    background: url(/IMG/background.png);
     border: 5px solid #EFEFEF;
     border-radius: 5px;
     background-size: cover;
@@ -192,3 +192,53 @@ body {
 /* INFO */
 /* CARD */
 
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .title {
+      width: 100%;
+    }
+  
+    .form {
+      width: 65%;
+      left: 25%;
+    }
+  
+    .random {
+      right: 4%;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .title {
+        width: 100%;
+      }
+
+      .title h1 {
+        font-size: 0;
+      }
+
+      .title h2 {
+        font-size: 0;
+      }
+    
+      .form {
+        width: 65%;
+        left: 20%;
+        margin-top: 3px;
+      }
+    
+      .random {
+        right: 4%;
+      }
+      
+      .poke-conteiner {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .pokemon {
+        width: 90%;
+        display: flex;
+      }
+  }
+  /* RESPONSIVE */
