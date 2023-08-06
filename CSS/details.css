@@ -11,7 +11,7 @@
 
 body {
     background: #72caab;
-    height: 100vh; 
+    height: 100vh;
 }
 
 .poke-details {
@@ -25,6 +25,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 /* MAIN */
 
 /* BODY */
@@ -38,6 +39,7 @@ body {
     border: 5px solid #EFEFEF;
     border-radius: 15px;
 }
+
 /* BODY */
 
 /* HOME */
@@ -71,12 +73,13 @@ body {
     margin-left: -50px;
     margin-top: 30px;
 }
+
 /* BUTTON HOME */
 
 /* BUTTON NEXT/PREV */
 .buttons {
     position: absolute;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     left: 55%;
@@ -85,9 +88,9 @@ body {
     transform: translate(-57%, 0);
     display: flex;
     gap: 65%;
-  }
-  
-  .prev {
+}
+
+.prev {
     width: 10%;
     border: 2px solid #000;
     border-radius: 5px;
@@ -110,6 +113,7 @@ body {
     box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
     cursor: pointer;
 }
+
 /* BUTTON NEXT/PREV */
 /* HOME */
 
@@ -123,22 +127,12 @@ body {
     color: #EFEFEF;
     border: 5px solid #EFEFEF;
     border-radius: 15px;
-   
+
     width: 60%;
     height: 85%;
 }
 
 /* TITLE */
-.title-details {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    margin-left: 20%;
-    font-size: 15px;
-    gap: 10px;
-    margin-top: -5px;
-}
-
 .details-title {
     display: flex;
     flex-direction: row;
@@ -149,16 +143,16 @@ body {
 .details-title h1 {
     display: flex;
     align-items: center;
-    margin-top: -10px;
-
 }
 
-.details-title h2 {
-    font-size: 15px;
+.title-details {
+    position: absolute;
     display: flex;
     align-items: center;
-    margin-left: -90px;
-    margin-top: 30px;
+    margin-left: 20%;
+    font-size: 15px;
+    gap: 10px;
+    margin-top: -5px;
 }
 
 .number {
@@ -166,6 +160,7 @@ body {
     font-size: 25px;
     color: #EFEFEF;
 }
+
 /* TITLE */
 
 /* IMG */
@@ -190,6 +185,7 @@ body {
 .pokemon-img img {
     width: 50%;
 }
+
 /* IMG */
 
 /* TEXT */
@@ -202,18 +198,26 @@ body {
 .txt {
     text-align: center;
 }
+
 /* TEXT */
 
 /* TYPE */
 .type {
+    width: 100px;
     color: #EFEFEF;
     font-size: 15px;
     font-weight: 600;
 
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 2px 15px;
     border-radius: 10px;
 }
+
+.types {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 /* TYPE */
 
 /* STATUS */
@@ -227,7 +231,7 @@ body {
     height: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;  
+    justify-content: space-around;
     list-style: none;
 }
 
@@ -247,17 +251,22 @@ body {
     margin-left: 10px;
 }
 
+.weaknesses-title {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
 .weaknesses {
     display: flex;
+    gap: 5px;
     justify-content: center;
     list-style: none;
-    gap: 55px;
-    margin-top: 15px;
     font-weight: 600;
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 2px 15px;
     border-radius: 10px;
 }
+
 
 .evolution {
     display: flex;
@@ -292,5 +301,6 @@ body {
     border-radius: 50%;
     border: 2px solid #EFEFEF;
 }
+
 /* STATUS */
 /* DETAILS */

@@ -56,14 +56,14 @@ const getPokemons = async (id) => {
 
 const createPokemonCard = (poke) => {
     const card = document.createElement('div');
-    card.classList.add("pokemon");
+    card.classList.add('pokemon');
 
     const name = poke.name[0].toUpperCase() + poke.name.slice(1);
     const id = poke.id.toString().padStart(3, '0');
 
-    const pokeTypes = poke.types.map(type => type.type.name);
+    const pokeTypes = poke.types.map((type) => type.type.name);
 
-    const typeColors = pokeTypes.map(type => {
+    const typeColors = pokeTypes.map((type) => {
         const color = colors[type];
         return `<span class="type" style="background-color:${color}">${type}</span>`;
     });
@@ -82,8 +82,18 @@ const createPokemonCard = (poke) => {
     `;
 
     card.innerHTML = pokemonInnerHTML;
+    card.setAttribute('data-id', poke.id);
+    card.addEventListener('click', () => openPokemonDetails(poke.id));
+
     pokeConteiner.appendChild(card);
-}
+};
+
+const openPokemonDetails = (pokemonId) => {
+    const url = `details.html?id=${pokemonId}`;
+    window.location.href = url;
+};
+
+
 
 const searchPokemon = (query) => {
     pokeConteiner.innerHTML = '';

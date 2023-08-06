@@ -1,84 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="details.css">
+    <link rel="stylesheet" href="/CSS/details.css">
     <link rel="icon" href="/IMG/icon.png">
     <title>Deteils</title>
-    
+
 </head>
+
 <body>
     <div class="poke-details">
         <div class="main">
             <div class="title">
                 <button class="button-home">
                     <a href="index.html">
-                    <img src="./IMG/pokeboll.png">
-                    <h1>Pokédex</h1>
-                    <h2>Kanto</h2>    
+                        <img src="./IMG/pokeboll.png">
+                        <h1>Pokédex</h1>
+                        <h2>Kanto</h2>
                     </a>
                 </button>
-                
+
                 <div class="details-title">
                     <h1>Details of</h1>
-                    <h2>Charizard</h2>
                 </div>
-    
-                </div>
-    
-                <div class="buttons">
-                    <button class="prev"> &lt; Prev</button>
-                    <button class="next">Next &gt; </button>
-                </div>
-    
+
+            </div>
+
+            <div class="buttons">
+                <button class="prev"> &lt; Prev</button>
+                <button class="next">Next &gt; </button>
+            </div>
+
         </div>
-    
-        <div class="details">
+
+        <div class="details" id="pokemonDetailsContainer">
             <div class="title-details">
-                <h1 class="name">Charizard</h1>
-                <span class="number">Nº 006</span>
+                <h1 class="name"></h1>
+                <span class="number"></span>
             </div>
-    
+
             <div class="pokemon-img">
-                <img class="img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif">
+                <img class="img" src="">
             </div>
-    
+
             <div class="details-txt">
                 <div class="txt">
-                    <div class="type">Fire</div>
+                    <div class="types">
+                    </div>
                 </div>
-    
+
                 <div class="status">
                     <div class="status-txt">
                         <h1>Base Status</h1>
-                        <li>HP - 50</li>
-                        <li>ATTACK - 84</li>
-                        <li>DEFENSE - 78</li>
-                        <li>SP.ATK - 109</li>
-                        <li>SP.DEF - 85</li>
-                        <li>SPEED - 100</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
                     </div>
                 </div>
-    
+
+                <h1 class="weaknesses-title">Weaknesses:</h1>
                 <div class="weaknesses">
-                    <li>Water</li>
-                    <li>Eletric</li>
-                    <li>Rock</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 </div>
-    
+
                 <div class="evolution">
-                  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png">
-                  <i class='bx bx-chevron-right'></i>
-                  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png">
-                  <i class='bx bx-chevron-right'></i> 
-                  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"> 
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png">
+                    <i class='bx bx-chevron-right'></i>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png">
+                    <i class='bx bx-chevron-right'></i>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png">
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="/JS/script.js"></script>
+        <script src="/JS/scriptDetails.js"></script>
 </body>
+
 </html>
