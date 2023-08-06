@@ -58,7 +58,8 @@ const displayPokemonDetails = (pokemon) => {
   const imgElement = document.querySelector(".img");
   const statusElements = document.querySelectorAll(".status-txt li");
   const weaknessesElement = document.querySelector(".weaknesses");
-  const pokemonWeaknesses = weaknesses[pokemon.types[0].type.name.toLowerCase()];
+  const pokemonWeaknesses =
+    weaknesses[pokemon.types[0].type.name.toLowerCase()];
 
   nameElement.textContent = pokemon.name.toUpperCase();
   numberElement.textContent = `Nº ${pokemon.id.toString().padStart(3, "0")}`;
@@ -73,7 +74,7 @@ const displayPokemonDetails = (pokemon) => {
     const color = colors[type.type.name];
     return `<div class="type" style="background-color:${color}">${type.type.name}</div>`;
   });
-  
+
   statusElements[0].textContent = `HP - ${pokemon.stats[0].base_stat}`;
   statusElements[1].textContent = `ATTACK - ${pokemon.stats[1].base_stat}`;
   statusElements[2].textContent = `DEFENSE - ${pokemon.stats[2].base_stat}`;
@@ -85,13 +86,15 @@ const displayPokemonDetails = (pokemon) => {
 
   if (pokemonWeaknesses) {
     const weaknessItems = pokemonWeaknesses.map(
-        (weakness) => `<li class="weaknesses" style="background-color:${colors[weakness.toLowerCase()] || '#000000'}">${weakness}</li>`
+      (weakness) =>
+        `<li class="weaknesses" style="background-color:${
+          colors[weakness.toLowerCase()] || "#000000"
+        }">${weakness}</li>`
     );
     weaknessesElement.innerHTML = weaknessItems.join("");
   } else {
     weaknessesElement.innerHTML = "";
   }
-  
 };
 
 const pokemonId = getQueryParam("id");
