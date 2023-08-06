@@ -14,7 +14,7 @@ body {
     height: 100vh; 
 }
 
-.poke-deteils {
+.poke-details {
     width: 100%;
     height: 100%;
 }
@@ -114,7 +114,7 @@ body {
 /* HOME */
 
 /* DETEILS */
-.deteils {
+.details {
     display: flex;
     margin-left: 20%;
     margin-top: 5px;
@@ -129,7 +129,7 @@ body {
 }
 
 /* TITLE */
-.title-deteils {
+.title-details {
     position: absolute;
     display: flex;
     align-items: center;
@@ -139,21 +139,21 @@ body {
     margin-top: -5px;
 }
 
-.deteils-title {
+.details-title {
     display: flex;
     flex-direction: row;
     color: #EFEFEF;
     margin-left: 30%;
 }
 
-.deteils-title h1 {
+.details-title h1 {
     display: flex;
     align-items: center;
     margin-top: -10px;
 
 }
 
-.deteils-title h2 {
+.details-title h2 {
     font-size: 15px;
     display: flex;
     align-items: center;
@@ -193,7 +193,7 @@ body {
 /* IMG */
 
 /* TEXT */
-.deteils-txt {
+.details-txt {
     width: 50%;
     height: 90%;
     margin-top: 40px;
