@@ -101,3 +101,25 @@ const pokemonId = getQueryParam("id");
 if (pokemonId) {
   fetchPokemonDetails(pokemonId);
 }
+
+let currentPokemonId = parseInt(pokemonId, 10);
+
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+const handleNavigation = (step) => {
+  currentPokemonId += step;
+  if (currentPokemonId <= 0) {
+    currentPokemonId = 1;
+  }
+  fetchPokemonDetails(currentPokemonId);
+  window.history.replaceState({}, '', `?id=${currentPokemonId}`);
+};
+
+prevBtn.addEventListener("click", () => {
+  handleNavigation(-1);
+});
+
+nextBtn.addEventListener("click", () => {
+  handleNavigation(1);
+});
