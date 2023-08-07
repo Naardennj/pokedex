@@ -172,9 +172,13 @@ const nextBtn = document.querySelector(".next");
 
 const handleNavigation = (step) => {
   currentPokemonId += step;
-  if (currentPokemonId <= 0) {
+
+  if (currentPokemonId < 1) {
+    currentPokemonId = 151;
+  } else if (currentPokemonId > 151) {
     currentPokemonId = 1;
   }
+
   fetchPokemonDetails(currentPokemonId);
   window.history.replaceState({}, "", `?id=${currentPokemonId}`);
 };
@@ -186,3 +190,5 @@ prevBtn.addEventListener("click", () => {
 nextBtn.addEventListener("click", () => {
   handleNavigation(1);
 });
+
+
