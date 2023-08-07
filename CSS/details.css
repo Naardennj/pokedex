@@ -266,8 +266,20 @@ body {
 
 .evolution {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 25px;
+  gap: 10px;
+}
+
+.evolution-item {
+  text-align: center;
+  margin-top: 20px;
+
+}
+
+.evolution-item img {
+  width: 100px;
+  height: 100px;
 }
 
 .evolution i {

@@ -95,6 +95,69 @@ const displayPokemonDetails = (pokemon) => {
   } else {
     weaknessesElement.innerHTML = "";
   }
+
+  fetch(pokemon.species.url)
+    .then((response) => response.json())
+    .then((speciesData) => {
+      const evolutionChainUrl = speciesData.evolution_chain.url;
+      fetch(evolutionChainUrl)
+        .then((response) => response.json())
+        .then((evolutionChainData) => {
+          const evolutionChain = extractEvolutionChain(evolutionChainData);
+
+          displayEvolutionChain(evolutionChain);
+        })
+        .catch((error) => console.error(error));
+    })
+    .catch((error) => console.error(error));
+};
+
+const extractEvolutionChain = (evolutionChainData) => {
+  const evolutionChain = [];
+
+  const extractDetails = (chain) => {
+    const speciesName = chain.species.name;
+    const evolvesTo = chain.evolves_to;
+
+    evolutionChain.push({ speciesName, imgUrl: getSpriteUrl(speciesName) });
+
+    if (evolvesTo.length > 0) {
+      evolvesTo.forEach((nextChain) => extractDetails(nextChain));
+    }
+  };
+
+  extractDetails(evolutionChainData.chain);
+
+  return evolutionChain;
+};
+
+const getSpriteUrl = (speciesName) => {
+  const url = `https://pokeapi.co/api/v2/pokemon/${speciesName}/`;
+  return fetch(url)
+    .then((response) => response.json())
+    .then(
+      (data) =>
+        data.sprites.versions["generation-v"]["black-white"]["front_default"]
+    )
+    .catch((error) => {
+      console.error(error);
+      return "";
+    });
+};
+
+const displayEvolutionChain = async (evolutionChain) => {
+  const evolutionElement = document.querySelector(".evolution");
+  let evolutionHTML = "";
+
+  for (const { speciesName, imgUrl } of evolutionChain) {
+    evolutionHTML += `
+      <div class="evolution-item">
+        <img src="${await imgUrl}" alt="${speciesName}" />
+      </div>
+    `;
+  }
+
+  evolutionElement.innerHTML = evolutionHTML;
 };
 
 const pokemonId = getQueryParam("id");
@@ -113,7 +176,7 @@ const handleNavigation = (step) => {
     currentPokemonId = 1;
   }
   fetchPokemonDetails(currentPokemonId);
-  window.history.replaceState({}, '', `?id=${currentPokemonId}`);
+  window.history.replaceState({}, "", `?id=${currentPokemonId}`);
 };
 
 prevBtn.addEventListener("click", () => {
